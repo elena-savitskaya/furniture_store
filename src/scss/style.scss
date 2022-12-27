@@ -1,0 +1,23 @@
+@import "./base";
+@import '../components/Categories/categories';
+@import '../components/Footer/footer';
+@import '../components/Header/header';
+@import '../components/Items/item';
+@import '../components/Order/order';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fff;
+    color: #222;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.wrapper {
+    width: 1280px;
+    margin: 50px auto;
+}

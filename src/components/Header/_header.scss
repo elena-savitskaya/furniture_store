@@ -1,0 +1,93 @@
+@import "../../scss/base";
+
+header {
+    position: relative;
+
+    & .logo {
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    & ul.nav {
+        float: right;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        & li {
+            cursor: pointer;
+            transition: opacity 500ms ease;
+
+            &:hover {
+                opacity: 50%;
+            }
+        }
+    }
+
+    & .presentation {
+        position: relative;
+        margin: 50px 0;
+        width: 100%;
+        height: 500px;
+        overflow: hidden;
+
+        & ::after {
+            content: "The best furniture for your home";
+            position: absolute;
+            top: 100px;
+            left: 50px;
+            max-width: 300px;
+            font-size: 40px;
+            font-weight: 600;
+            color: $color-white;
+        }
+    
+        & ::before {
+            content: "At low prices";
+            position: absolute;
+            top: 250px;
+            left: 50px;
+            max-width: 300px;
+            font-size: 20px;
+            font-weight: 300;
+            color: $color-white;
+        }
+    }
+}
+
+.cart-button {
+    margin-right: 20px;
+    float: right;
+    cursor: pointer;
+    transition: color, transform 500ms ease;
+    
+    &:hover,
+    &.active{
+        color: $color-button-active;
+        transform: scale(1.5)
+    }
+}
+
+header .shop-cart {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 450px;
+    min-height: 100px;
+    background: $color-background-white;
+    -webkit-box-shadow: 2px 1px 19px 4px rgba(186,186,186,0.96);
+    -moz-box-shadow: 2px 1px 19px 4px rgba(186,186,186,0.96);
+    box-shadow: 2px 1px 19px 4px rgba(186,186,186,0.96);
+    z-index: 1;
+    padding: 20px;
+    padding-bottom: 0;
+
+    & .sum {
+        float: left;
+        width: 100%;
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+}
