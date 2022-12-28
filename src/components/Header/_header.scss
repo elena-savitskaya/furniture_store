@@ -109,7 +109,12 @@ header .shop-cart {
     }
 
     header .shop-cart .item .delete-icon {
-        padding-right: 20px;
+        padding-right: 10px;
+    }
+
+    header .shop-cart .item, 
+    header .shop-cart .sum{
+        padding-left: 10px;
     }
 }
 
