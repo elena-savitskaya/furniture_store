@@ -101,21 +101,20 @@ header .shop-cart {
     }
 
     header .shop-cart {
-        left: 0;
-        width: 100%;
+        max-width: 100%;
     }
 
     header .presentation .text {
         font-size: 20px;
+    }
+
+    header .shop-cart .item .delete-icon {
+        padding-right: 20px;
     }
 }
 
 @media screen and (max-width: 375px){
     header .presentation {
         height: 150px;
-    }
-
-    header .shop-cart {
-        max-width: 300px;
     }
 }
