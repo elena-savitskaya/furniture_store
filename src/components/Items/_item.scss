@@ -1,13 +1,12 @@
 @import "../../scss/base";
 
-main {
+main .items {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-between;
 
     & .item {
-        width: 30%;
         margin-bottom: 50px;
         background: $color-background-item;
         overflow: hidden;
@@ -64,7 +63,7 @@ main p,
 .full-item p,
 main b,
 .full-item b {
-    margin: 10px 20px;
+    margin: 20px 20px;
     color: $color-black;
 }
 
@@ -106,5 +105,39 @@ full-item b {
 
     &:hover {
         transform: scale(1.2)
+    }
+}
+
+
+@media screen and (max-width: 775px){
+    .full-item >div {
+            width: 500px;
+    }
+}
+
+@media screen and (max-width: 575px){
+    main .items {
+        flex-direction: column;
+    }
+
+    main .item {
+        width: 100%;
+    }
+
+    .full-item >div {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 485px){
+    .full-item >div {
+        width: 300px;
+    }
+}
+
+
+@media screen and (max-width: 375px){
+    .full-item >div {
+        width: 250px;
     }
 }

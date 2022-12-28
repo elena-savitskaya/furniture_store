@@ -7,9 +7,11 @@ class Items extends React.Component {
         return (
             <main>
                 <div className='container'>
-                    {this.props.items.map(el => (
+                    <div className='items'>
+                       {this.props.items.map(el => (
                         <Item key={el.id} item={el} onAdd={this.props.onAdd} onShowItem={this.props.onShowItem} />
-                    ))}
+                    ))} 
+                    </div>
                 </div>
             </main>
         )
