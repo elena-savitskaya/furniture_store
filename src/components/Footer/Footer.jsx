@@ -4,7 +4,9 @@ import './_footer.scss';
 function Footer() {
     return (
         <footer>
-            2022 &copy;
+            <div className='container'>
+                2022 &copy;
+            </div>
         </footer>
     )
 }

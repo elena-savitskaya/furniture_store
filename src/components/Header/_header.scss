@@ -1,69 +1,72 @@
 @import "../../scss/base";
 
 header {
-    position: relative;
 
-    & .logo {
-        font-weight: 600;
-        font-size: 20px;
-    }
-
-    & ul.nav {
-        float: right;
-        list-style: none;
+    .header {
+        position: relative;
+        padding: 20px 0 0 0;
         display: flex;
-        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
         gap: 20px;
 
-        & li {
-            cursor: pointer;
-            transition: opacity 500ms ease;
+        & .logo {
+            font-weight: 600;
+            font-size: 35px;
+            color: $color-dark-grey;
+        }
 
-            &:hover {
-                opacity: 50%;
+        & ul.nav {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            gap: 20px;
+
+            & li {
+                cursor: pointer;
+                transition: opacity 500ms ease;
+
+                &:hover {
+                    opacity: 50%;
+                }
             }
         }
     }
 
     & .presentation {
         position: relative;
-        margin: 50px 0;
-        width: 100%;
+        max-width: 100%;
         height: 500px;
-        overflow: hidden;
 
-        & ::after {
-            content: "The best furniture for your home";
+        & img {
+            width: 100%;
+            object-fit: cover;
+            object-position: bottom;
             position: absolute;
-            top: 100px;
-            left: 50px;
+            bottom: 0;
+        }
+
+        & .text {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
             max-width: 300px;
             font-size: 40px;
             font-weight: 600;
             color: $color-white;
-        }
-    
-        & ::before {
-            content: "At low prices";
-            position: absolute;
-            top: 250px;
-            left: 50px;
-            max-width: 300px;
-            font-size: 20px;
-            font-weight: 300;
-            color: $color-white;
+            }
         }
     }
-}
+
 
 .cart-button {
-    margin-right: 20px;
-    float: right;
     cursor: pointer;
     transition: color, transform 500ms ease;
-    
+
     &:hover,
-    &.active{
+    &.active {
         color: $color-button-active;
         transform: scale(1.5)
     }
@@ -76,9 +79,9 @@ header .shop-cart {
     width: 450px;
     min-height: 100px;
     background: $color-background-white;
-    -webkit-box-shadow: 2px 1px 19px 4px rgba(186,186,186,0.96);
-    -moz-box-shadow: 2px 1px 19px 4px rgba(186,186,186,0.96);
-    box-shadow: 2px 1px 19px 4px rgba(186,186,186,0.96);
+    -webkit-box-shadow: 2px 1px 19px 4px rgba(186, 186, 186, 0.96);
+    -moz-box-shadow: 2px 1px 19px 4px rgba(186, 186, 186, 0.96);
+    box-shadow: 2px 1px 19px 4px rgba(186, 186, 186, 0.96);
     z-index: 1;
     padding: 20px;
     padding-bottom: 0;
@@ -89,5 +92,29 @@ header .shop-cart {
         font-weight: 600;
         font-size: 20px;
         margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 575px){
+    header .presentation {
+        height: 250px;
+    }
+
+    header .shop-cart {
+        left: 0;
+    }
+
+    header .presentation .text {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 375px){
+    header .presentation {
+        height: 150px;
+    }
+
+    header .shop-cart {
+        max-width: 300px;
     }
 }

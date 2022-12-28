@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import home from '../../img/home.jpg';
 import './_header.scss';
 import { FaShoppingCart } from "react-icons/fa";
 import { Order } from '../Order/Order';
@@ -27,24 +28,28 @@ function Header(props) {
 
     return (
         <header>
-            <div>
-                <span className='logo'>House Staff</span>
-                <ul className='nav'>
-                    <li>About</li>
-                    <li>Contacts</li>
-                    <li>Personal account</li>
-                </ul>
-                <FaShoppingCart onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`cart-button ${cartOpen && 'active'}`} />
-                {cartOpen && (
-                    <div className='shop-cart'>
-                        {props.orders.length > 0 ?
-                            showOrders(props) : showNothing()}
-
+            <div className='container'>
+                <div className='header'>
+                    <h1 className='logo'>House Staff</h1>
+                    <div className='header-nav'>
+                        <ul className='nav'>
+                            <li>About</li>
+                            <li>Contacts</li>
+                            <li>Personal account</li>
+                        </ul>
+                        <FaShoppingCart onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`cart-button ${cartOpen && 'active'}`} />
+                        {cartOpen && (
+                            <div className='shop-cart'>
+                                {props.orders.length > 0 ?
+                                    showOrders(props) : showNothing()}
+                            </div>
+                        )}
                     </div>
-                )}
-            </div>
-            <div className='presentation'>
-                <img src="./img/home.jpg" alt="img" />
+                </div>
+                <div className='presentation'>
+                    <img src={home} alt="img" />
+                    <div className='text'>The best furniture for your home</div>
+                </div>
             </div>
         </header>
     )

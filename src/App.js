@@ -73,13 +73,13 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="wrapper">
+      <>
         <Header orders={this.state.orders} onDelete={this.deleteOrder} />
         <Categories chooseCategory={this.chooseCategory} />
         <Items onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.addToOrder} />
         {this.state.showFullItem && <ShowFullItem item={this.state.fullItem} onShowItem={this.onShowItem} onAdd={this.addToOrder} />}
         <Footer />
-      </div>
+      </>
     );
   }
 
