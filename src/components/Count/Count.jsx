@@ -4,15 +4,15 @@ const Count = ({ count, increase, decrease, changeValue, id }) => {
 	return (
 		<div className='count'>
 			<div className='count-box'>
-				<input onChange={(e)=>{changeValue(id, +e.target.value)}} type='number' className='count-input' min='1' max='100' value={count} />
+				<input onChange={(e) => { changeValue(id, +e.target.value) }} type='number' className='count-input' min='1' max='100' value={count} />
 			</div>
 			<div className='count-controls'>
-				<button type='button' className='count-up' onClick={()=>{increase(id)}}>
-					<img src='./img/icon-up.svg' alt='Increase' />
-				</button>
-				<button type='button' className='count-down' onClick={()=>{decrease(id)}}>
-					<img src='./img/icon-down.svg' alt='Decrease' />
-				</button>
+				<svg onClick={() => { increase(id) }} width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M13 7L7 1L1 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+				<svg onClick={() => { decrease(id) }} width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1 1L7 7L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
 			</div>
 		</div>
 	);
