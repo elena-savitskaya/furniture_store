@@ -2,18 +2,31 @@
 
 .count {
     display: flex;
-    column-gap: 2px;
+    column-gap: 10px;
     align-items: center;
-    padding: 10px 0;
+}
+
+.count-box {
+    width: 30px;
+    height: 30px;
+    background: $color-background;
+    border-radius: 3px;
 }
 
 .count-input {
-	max-width: 30px;
+	max-width: 100%;
+    padding-top: 4px;
 	background-color: transparent;
     text-align: center;
     font-weight: 600;
-	font-size: 15px;
+	font-size: 20px;
+	line-height: 1.3;
     border: none;
+}
+
+.count-input::-webkit-inner-spin-button,
+.count-input::-webkit-outer-spin-button {
+    appearance: none;
 }
 
 .count-controls {
@@ -24,5 +37,4 @@
 
 .count-controls svg {
     fill: $color-dark;
-    width: 20px;
 }
