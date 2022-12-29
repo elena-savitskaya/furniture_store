@@ -6,12 +6,18 @@ import { Order } from '../Order/Order';
 
 const showOrders = (props) => {
     let sum = 0;
-    props.orders.forEach(el => sum += Number.parseFloat(el.price))
+    props.orders.forEach(el => sum += Number.parseFloat(el.priceTotal))
 
     return (
         <div>
             {props.orders.map(el => (
-                <Order onDelete={props.onDelete} key={el.id} item={el} />))}
+                <Order 
+                    onDelete={props.onDelete} 
+                    increase={props.increase}
+                    decrease={props.decrease}
+                    changeValue={props.changeValue} 
+                    key={el.id} 
+                    item={el} />))}
             <p className='sum'>Total: {new Intl.NumberFormat().format(sum)} $</p>
         </div>
     )
@@ -24,7 +30,6 @@ const showNothing = () => {
 
 function Header(props) {
     let [cartOpen, setCartOpen] = useState(false);
-
 
     return (
         <header>
@@ -48,7 +53,7 @@ function Header(props) {
                 </div>
                 <div className='presentation'>
                     <img src={home} alt="img" />
-                    <div className='text'>The best furniture for your home</div>
+                    <div className='text'>The best furniture at low prices</div>
                 </div>
             </div>
         </header>
