@@ -6,7 +6,9 @@ class Order extends Component {
     render() {
         return (
             <div className='item'>
-                <img src={"./img/" + this.props.item.img} alt='img' />
+                <div className='item-image'>
+                    <img src={"./img/" + this.props.item.img} alt='img' />
+                </div>
                 <div className='item-count'>
 				    <Count count={this.props.item.count} increase={this.props.increase} decrease={this.props.decrease} changeValue={this.props.changeValue} id={this.props.item.id} />
 			    </div>
