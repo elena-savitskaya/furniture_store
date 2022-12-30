@@ -91,9 +91,9 @@ class App extends React.Component {
       <>
         <Header 
           orders={this.state.orders} 
-          increase={this.increase}
-          decrease={this.decrease}
-          changeValue={this.changeValue} 
+          onIncrease={this.increase}
+          onDecrease={this.decrease}
+          onchangeValue={this.changeValue} 
           onDelete={this.deleteOrder} />
         <Categories chooseCategory={this.chooseCategory} />
         <Items onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.addToOrder} />

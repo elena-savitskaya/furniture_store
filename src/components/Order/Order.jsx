@@ -14,7 +14,7 @@ class Order extends Component {
                     <b>{this.props.item.priceTotal} $</b>    
                 </div>
                 <div className='item-count'>
-				    <Count count={this.props.item.count} increase={this.props.increase} decrease={this.props.decrease} changeValue={this.props.changeValue} id={this.props.item.id} />
+				    <Count count={this.props.item.count} increase={this.props.onIncrease} decrease={this.props.onDecrease} changeValue={this.props.onChangeValue} id={this.props.item.id} />
 			    </div>    
                 <FaTrash className='delete-icon' onClick={() => this.props.onDelete(this.props.item.id)}/>
             </div>)

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import home from '../../img/home.jpg';
 import './_header.scss';
-import { FaShoppingCart } from "react-icons/fa";
 import { Order } from '../Order/Order';
+import { FaShoppingCart } from 'react-icons/fa';
 
 const showOrders = (props) => {
     let sum = 0;
@@ -13,9 +13,9 @@ const showOrders = (props) => {
             {props.orders.map(el => (
                 <Order 
                     onDelete={props.onDelete} 
-                    increase={props.increase}
-                    decrease={props.decrease}
-                    changeValue={props.changeValue} 
+                    onIncrease={props.onIncrease}
+                    onDecrease={props.onDecrease}
+                    onChangeValue={props.onChangeValue} 
                     key={el.id} 
                     item={el} />))}
             <p className='sum'>Total: {new Intl.NumberFormat().format(sum)} $</p>
@@ -48,7 +48,7 @@ function Header(props) {
                                 {props.orders.length > 0 ?
                                     showOrders(props) : showNothing()}
                             </div>
-                        )}
+                        )} 
                     </div>
                 </div>
                 <div className='presentation'>
